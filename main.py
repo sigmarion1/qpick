@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+import random
 
 from fastapi import FastAPI, Request, Depends, File, UploadFile
 from fastapi.templating import Jinja2Templates
@@ -27,19 +28,22 @@ def read_root(
     return templates.TemplateResponse("index.html", {"request": request})
 
 
-# @app.get("/{image_name}", response_class=HTMLResponse)
-# async def read_item(request: Request, image_name: str, db: Session = Depends(get_db)):
-#     image_name = image_name.lower()
-#     image = db.query(ImageModel).filter(ImageModel.name == image_name).first()
+@app.get("/{option_string}", response_class=HTMLResponse)
+async def read_item(request: Request, option_string: str):
 
-#     if image:
-#         return templates.TemplateResponse(
-#             "image.html", {"request": request, "image": image}
-#         )
+    option_list = option_string.split(",")
 
-#     return templates.TemplateResponse(
-#         "upload.html", {"request": request, "image_name": image_name}
-#     )
+    picked = random.choice(option_list)
+
+    image = {
+        "name": picked,
+        "url": f"/image/{picked}.png",
+        "thumbnail_url": f"/image/{picked}_th.png",
+    }
+
+    return templates.TemplateResponse(
+        "select.html", {"request": request, "picked": picked, "image": image}
+    )
 
 
 # @app.post("/{image_name}", response_class=HTMLResponse)

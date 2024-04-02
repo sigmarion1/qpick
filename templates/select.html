@@ -1,0 +1,10 @@
+{% extends "layout.html" %} {% block og %}
+<meta property="og:title" content="짤앱 - 세상의 모든 짤방" />
+<meta property="og:description" content="{{image.name}}" />
+<meta property="og:image" content="https://jjal.app/{{image.thumbnail_url}}" />
+{% endblock %} {% block content %}
+<img src="{{image.url}}" class="img-fluid" alt="Responsive image" />
+
+<h1>{{picked}}</h1>
+
+{% endblock %}
