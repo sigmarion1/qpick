@@ -10,6 +10,8 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from PIL import Image
 
+from image_generator import generate_image
+
 # from models import Image as ImageModel
 # from database import SessionLocal, engine, Base
 
@@ -24,25 +26,46 @@ templates = Jinja2Templates(directory="templates")
 def read_root(
     request: Request,
 ):
-
     return templates.TemplateResponse("index.html", {"request": request})
 
 
 @app.get("/{option_string}", response_class=HTMLResponse)
-async def read_item(request: Request, option_string: str):
+async def pick(request: Request, option_string: str):
 
     option_list = option_string.split(",")
 
-    picked = random.choice(option_list)
+    random.shuffle(option_list)
+
+    image_path = generate_image(option_list[0])
 
     image = {
-        "name": picked,
-        "url": f"/image/{picked}.png",
-        "thumbnail_url": f"/image/{picked}_th.png",
+        "url": image_path,
+        "thumbnail_url": image_path,
     }
 
     return templates.TemplateResponse(
-        "select.html", {"request": request, "picked": picked, "image": image}
+        "result.html", {"request": request, "option_list": option_list, "image": image}
+    )
+
+
+@app.get("/{option_string}/{seed}", response_class=HTMLResponse)
+async def pick_by_seed(request: Request, option_string: str, seed: str):
+
+    option_list = option_string.split(",")
+
+    random.seed(seed)
+
+    random.shuffle(option_list)
+
+    image_path = generate_image(option_list[0])
+
+    image = {
+        "url": image_path,
+        "thumbnail_url": image_path,
+    }
+
+    return templates.TemplateResponse(
+        "result.html", {"request": request, "option_list": option_list, "image": image}
     )
 
 

@@ -1,23 +1,116 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 
-<h1>짤앱</h1>
 <div class="col-lg-8 px-0">
+  <h1>Welcome to Pick1.me</h1>
+  <p>
+    Your go-to website for making random choices easy and fun! Whether you're
+    deciding between lunch options, picking a movie to watch, or selecting who's
+    up next for a game, Pick1.me simplifies the decision-making process.
+  </p>
 
-  <p class="fs-5">짤방을 올리기 위해서는 https://jjal.app/{올릴 짤방 이름} 으로 접근해주세요 기존에 올려져 있지 않은 주소에만 업로드가 가능합니다.</p>
-  <form id="keyForm">
+  <h2>How to Use Pick1.me</h2>
+  <h3>Making a Random Choice</h3>
+  <ol>
+    <li>
+      <strong>Gather Your Options:</strong> Start by deciding on the items among
+      which you want to make a random choice. These can be anything: names,
+      places, activities, etc.
+    </li>
+    <li>
+      <strong>Format Your URL:</strong> Enter your options into the Pick1.me URL
+      by appending them to the site's base URL in a comma-separated list. For
+      example:
+      <a href="https://pick1.me/pizza,sushi,burger"
+        >https://pick1.me/pizza,sushi,burger</a
+      >
+    </li>
+    <li>
+      <strong>Get Your Random Pick:</strong> Hit enter or navigate to the
+      formatted URL in your web browser. Pick1.me will automatically select one
+      of the options at random and display it on the screen.
+    </li>
+  </ol>
+
+  <h3>Fixing the Result with a Seed Value</h3>
+  <ol>
+    <li>
+      <strong>Choose a Seed:</strong> Your seed can be any string, like a date
+      (<code>2024-01-01</code>) or a word (<code>the_food_for_party</code>). The
+      same seed will always produce the same result from the same list of
+      options.
+    </li>
+    <li>
+      <strong>Format Your URL with a Seed:</strong> Append the seed value to the
+      end of the URL after a slash (<code>/</code>). For example:
+      <a href="https://pick1.me/pizza,sushi,burger/2024-01-01"
+        >https://pick1.me/pizza,sushi,burger/2024-01-01</a
+      >
+      <a href="https://pick1.me/pizza,sushi,burger/the_food_for_party"
+        >https://pick1.me/pizza,sushi,burger/the_food_for_party</a
+      >
+    </li>
+    <li>
+      <strong>Get Your Fixed Result:</strong> Navigate to the URL with your seed
+      value included. The website will display the choice determined by the seed
+      value, providing a consistent result for the same input and seed.
+    </li>
+  </ol>
+
+  <h2>Tips for Using Pick1.me</h2>
+  <ul>
+    <li>
+      Double-Check Your List: Ensure there are no unintentional spaces after
+      commas in your list, as this might affect the random selection or seed
+      result.
+    </li>
+    <li>
+      Creative Seeding: Use memorable dates or words for seeds when you need
+      consistent results across different sessions or for sharing with others.
+    </li>
+    <li>
+      Share Your Picks: Easily share your choices with friends or colleagues by
+      sending them the URL. They'll get the same random (or fixed) result as you
+      did.
+    </li>
+  </ul>
+
+  <h2>Privacy and Security</h2>
+  <p>
+    At Pick1.me, we value your privacy. The service is designed to be
+    straightforward and does not require personal information or registration.
+    Your choices and seed values are processed on the fly, and no data is stored
+    after your session ends.
+  </p>
+
+  <h2>Support</h2>
+  <p>
+    Have questions, feedback, or suggestions? We're always looking to improve
+    your experience. Please note that Pick1.me currently does not offer direct
+    support channels, but we encourage users to explore the site and discover
+    its simplicity and convenience for all your decision-making needs.
+  </p>
+
+  <p>
+    Thank you for using Pick1.me – the simplest way to make random choices
+    online!
+  </p>
+
+  <a href="https://github.com/sigmarion1/pickpick" class="btn btn-primary"
+    >View on GitHub</a
+  >
+
+  <!-- <form id="keyForm">
     <label for="url">짤방 이름:</label><br>
     <input type="text" id="key" name="key"><br>
     <input class="btn btn-primary" type="submit" value="만들어보기">
   </form>
   <hr class="col-1 my-4">
   <h4>현재 업로드된 이미지 수 : {{image_count}}</h3>
-  <a href="https://github.com/sigmarion1/jjal-app" class="btn btn-primary">View on GitHub</a>
   <script>
     document.getElementById('keyForm').onsubmit = function () {
       window.location.href = "/" + document.getElementById('key').value;
       return false;
     }
-  </script>
+  </script> -->
 </div>
 {% endblock %}

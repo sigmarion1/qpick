@@ -1,0 +1,10 @@
+{% extends "layout.html" %} {% block og %}
+<meta property="og:title" content="pick1.me" />
+<meta property="og:description" content="{{image.name}}" />
+<meta property="og:image" content="https://pick1.me/{{image.thumbnail_url}}" />
+{% endblock %} {% block content %}
+<img src="{{image.url}}" class="img-fluid" alt="Responsive image" />
+
+<h1>{{option_list}}</h1>
+
+{% endblock %}

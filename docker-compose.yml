@@ -1,0 +1,9 @@
+version: "3"
+services:
+  pick1me:
+    build: ./
+    restart: always
+networks:
+  default:
+    external:
+      name: external-network

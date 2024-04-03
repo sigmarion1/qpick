@@ -1,5 +1,4 @@
-# jjal-app
-
+# pick1.me
 
 ## run develop app
 
