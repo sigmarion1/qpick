@@ -1,6 +1,6 @@
 version: "3"
 services:
-  pick1me:
+  qpick:
     build: ./
     restart: always
 networks:
