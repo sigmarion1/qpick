@@ -17,7 +17,7 @@ from image_generator import generate_image
 
 app = FastAPI()
 
-# app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/image", StaticFiles(directory="image"), name="image")
 templates = Jinja2Templates(directory="templates")
 

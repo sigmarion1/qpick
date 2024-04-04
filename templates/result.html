@@ -1,10 +1,10 @@
 {% extends "layout.html" %} {% block og %}
-<meta property="og:title" content="pick1.me" />
-<meta property="og:description" content="{{image.name}}" />
-<meta property="og:image" content="https://pick1.me/{{image.thumbnail_url}}" />
+<meta property="og:title" content="qpick.app" />
+<meta property="og:description" content="result: {{image.name}}" />
+<meta property="og:image" content="https://qpick.app/{{image.thumbnail_url}}" />
 {% endblock %} {% block content %}
 <img
-  src="https://pick1.me/{{image.url}}"
+  src="https://qpick.app/{{image.url}}"
   class="img-fluid"
   alt="Responsive image"
 />
