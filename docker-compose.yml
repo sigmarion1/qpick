@@ -3,7 +3,5 @@ services:
   qpick:
     build: ./
     restart: always
-networks:
-  default:
-    external:
-      name: external-network
+    ports:
+      - "8004:8000"
