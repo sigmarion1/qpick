@@ -5,3 +5,5 @@ services:
     restart: always
     ports:
       - "8004:8000"
+    volumes:
+      - ./image:/app/image
