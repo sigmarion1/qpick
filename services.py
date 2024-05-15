@@ -22,7 +22,7 @@ def get_option_list(option_string: str, seed: str | None = None) -> List[str]:
 def get_image_path(option: str) -> str:
 
     # Define the images directory
-    images_dir = "images"
+    images_dir = "image"
     # Ensure the images directory exists
     os.makedirs(images_dir, exist_ok=True)
 
