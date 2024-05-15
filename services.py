@@ -11,6 +11,8 @@ from image_generator import (
 def get_option_list(option_string: str, seed: str | None = None) -> List[str]:
     option_list = option_string.split(",")
 
+    option_list.sort()
+
     if seed:
         random.seed(seed)
 
@@ -29,10 +31,10 @@ def get_image_path(option: str) -> str:
     # Define the image path
     image_path = os.path.join(images_dir, f"{option}.png")
 
-    print(image_path)
-
     if os.path.exists(image_path):
-        if random.randint(0, 9) == 0:
+        random.seed(None)
+        random_number = random.randint(0, 10)
+        if random_number == 0:
             add_emoji(option, image_path)
     else:
         generate_image(option, image_path)

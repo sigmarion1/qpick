@@ -3,6 +3,8 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 
+from datetime import datetime
+
 from services import get_option_list, get_image_path
 
 
@@ -23,7 +25,9 @@ def read_root(
 @app.get("/{option_string}", response_class=HTMLResponse)
 async def pick(request: Request, option_string: str):
 
-    option_list = get_option_list(option_string)
+    date_seed = datetime.now().strftime("%Y-%m-%d")
+
+    option_list = get_option_list(option_string, seed=date_seed)
     image_path = get_image_path(option_list[0])
 
     image = {
@@ -33,7 +37,12 @@ async def pick(request: Request, option_string: str):
 
     return templates.TemplateResponse(
         "result.html",
-        {"request": request, "option_list": option_list, "image": image},
+        {
+            "request": request,
+            "option_list": option_list,
+            "image": image,
+            "seed": date_seed,
+        },
     )
 
 
@@ -50,5 +59,5 @@ async def pick_by_seed(request: Request, option_string: str, seed: str):
 
     return templates.TemplateResponse(
         "result.html",
-        {"request": request, "option_list": option_list, "image": image},
+        {"request": request, "option_list": option_list, "image": image, "seed": seed},
     )

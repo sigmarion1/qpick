@@ -9,19 +9,29 @@
 </style>
 
 {% endblock %} {% block content %}
-<img
-  src="https://qpick.app/{{image.url}}"
-  class="img-fluid"
-  alt="Responsive image"
-/>
-
-<h1>Result</h1>
-<ol>
-  {% for option in option_list %}
-  <li class="{% if loop.index == 1 %}important{% endif %}">{{ option }}</li>
-  {% endfor %}
-</ol>
-<!-- 
-<h1>{{option_list}}</h1> -->
+<div class="container my-5">
+  <div class="card">
+    <div class="card-body text-center">
+      <img
+        src="https://qpick.app/{{ image.url }}"
+        class="img-fluid mb-4"
+        alt="Responsive image"
+      />
+      <h1 class="display-4">Result : {{ option_list[0] }}</h1>
+      <p class="lead">Seed: <span class="font-weight-bold">{{ seed }}</span></p>
+      <div class="mt-4">
+        <ol class="list-group list-group-flush">
+          {% for option in option_list %}
+          <li
+            class="list-group-item {% if loop.index == 1 %}list-group-item-primary{% endif %}"
+          >
+            {{loop.index}} - {{ option }}
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
