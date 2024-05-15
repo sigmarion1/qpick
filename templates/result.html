@@ -2,6 +2,13 @@
 <meta property="og:title" content="qpick.app" />
 <meta property="og:description" content="result: {{image.name}}" />
 <meta property="og:image" content="https://qpick.app/{{image.thumbnail_url}}" />
+
+<style>
+  .important {
+    font-weight: bold;
+  }
+</style>
+
 {% endblock %} {% block content %}
 <img
   src="https://qpick.app/{{image.url}}"
@@ -9,6 +16,13 @@
   alt="Responsive image"
 />
 
-<h1>{{option_list}}</h1>
+<h1>Result</h1>
+<ol>
+  {% for option in option_list %}
+  <li class="{% if loop.index == 1 %}important{% endif %}">{{ option }}</li>
+  {% endfor %}
+</ol>
+<!-- 
+<h1>{{option_list}}</h1> -->
 
 {% endblock %}
