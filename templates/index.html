@@ -9,12 +9,12 @@
 <div class="container my-5">
   <div class="row">
     <div class="col-lg-8 mx-auto">
-      <h1 class="display-4 text-center">Welcome to QPick.app</h1>
+      <h1 class="display-4 text-center">Welcome to qpick!!</h1>
       <p class="lead text-center">
         Your go-to website for making random choices easy and fun! Whether
         you're deciding between lunch options, picking a movie to watch, or
-        selecting who's up next for a game, QPick.app simplifies the
-        decision-making process.
+        selecting who's up next for a game, qpick simplifies the decision-making
+        process.
       </p>
 
       <div class="card my-4">
@@ -79,10 +79,10 @@
           </div>
         </div>
       </div>
+      <!-- 
+      <h2 id="how-to-use" class="mt-5">How to Use qpick</h2>
 
-      <h2 id="how-to-use" class="mt-5">How to Use QPick.app</h2>
-
-      <img src="/static/example.jpeg" class="img-fluid mb-4" alt="QPick.app" />
+      <img src="/static/example.jpeg" class="img-fluid mb-4" alt="qpick" /> -->
 
       <h3 class="mt-4">Making a Random Choice</h3>
       <ol class="list-group list-group-flush">
@@ -92,17 +92,17 @@
           names, places, activities, etc.
         </li>
         <li class="list-group-item">
-          <strong>Format Your URL:</strong> Enter your options into the
-          QPick.app URL by appending them to the site's base URL in a
-          comma-separated list. For example:
-          <a href="https://qpick.app/pizza,sushi,burger" class="text-info"
-            >https://qpick.app/pizza,sushi,burger</a
+          <strong>Format Your URL:</strong> Enter your options into the qpick
+          URL by appending them to the site's base URL in a comma-separated
+          list. For example:
+          <a href="https://qpick.lim.sh/pizza,sushi,burger" class="text-info"
+            >https://qpick.lim.sh/pizza,sushi,burger</a
           >
         </li>
         <li class="list-group-item">
           <strong>Get Your Random Pick:</strong> Hit enter or navigate to the
-          formatted URL in your web browser. QPick.app will automatically select
-          one of the options at random and display it on the screen.
+          formatted URL in your web browser. qpick will automatically select one
+          of the options at random and display it on the screen.
         </li>
       </ol>
 
@@ -117,15 +117,15 @@
           <strong>Format Your URL with a Seed:</strong> Append the seed value to
           the end of the URL after a slash (/). For example:
           <a
-            href="https://qpick.app/pizza,sushi,burger/2024-01-01"
+            href="https://qpick.lim.sh/pizza,sushi,burger/2024-01-01"
             class="text-info"
-            >https://qpick.app/pizza,sushi,burger/2024-01-01</a
+            >https://qpick.lim.sh/pizza,sushi,burger/2024-01-01</a
           >
           or
           <a
-            href="https://qpick.app/pizza,sushi,burger/the_food_for_party"
+            href="https://qpick.lim.sh/pizza,sushi,burger/the_food_for_party"
             class="text-info"
-            >https://qpick.app/pizza,sushi,burger/the_food_for_party</a
+            >https://qpick.lim.sh/pizza,sushi,burger/the_food_for_party</a
           >
         </li>
         <li class="list-group-item">
@@ -136,7 +136,7 @@
         </li>
       </ol>
 
-      <h2 id="tips" class="mt-5">Tips for Using QPick.app</h2>
+      <h2 id="tips" class="mt-5">Tips for Using qpick</h2>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
           <strong>Double-Check Your List:</strong> Ensure there are no
@@ -157,21 +157,21 @@
           <strong>Enjoy Fun Emojis:</strong> Sometimes funny emojis will be
           added to the image when that name is picked, making the experience
           more fun.
-          <img src="/static/matt.png" class="img-fluid mb-4" alt="QPick.app" />
+          <img src="/static/matt.png" class="img-fluid mb-4" alt="qpick" />
         </li>
       </ul>
 
       <h2 id="support" class="mt-5">Support</h2>
       <p>
         Have questions, feedback, or suggestions? We're always looking to
-        improve your experience. Please note that QPick.app currently does not
-        offer direct support channels, but we encourage users to explore the
-        site and discover its simplicity and convenience for all your
-        decision-making needs.
+        improve your experience. Please note that qpick currently does not offer
+        direct support channels, but we encourage users to explore the site and
+        discover its simplicity and convenience for all your decision-making
+        needs.
       </p>
 
       <p>
-        Thank you for using QPick.app – the simplest way to make random choices
+        Thank you for using qpick – the simplest way to make random choices
         online!
       </p>
     </div>
@@ -198,7 +198,7 @@
     const seedInput = document.getElementById("seedInput").value.trim();
     const seed = seedInput || new Date().toISOString().split("T")[0];
     if (items.length > 0) {
-      const url = `https://qpick.app/${items.join(",")}/${seed}`;
+      const url = `https://qpick.lim.sh/${items.join(",")}/${seed}`;
       const resultLink = document.getElementById("resultLink");
       resultLink.value = url;
       resultLink.style.display = "block";

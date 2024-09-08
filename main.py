@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Request
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 
 from datetime import datetime
@@ -13,6 +13,12 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/image", StaticFiles(directory="image"), name="image")
 templates = Jinja2Templates(directory="templates")
+
+
+# Serve favicon.ico
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return FileResponse("static/favicon.ico")  # adjust the path if necessar
 
 
 @app.get("/", response_class=HTMLResponse)

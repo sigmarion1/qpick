@@ -1,6 +1,9 @@
 {% extends "layout.html" %} {% block og %}
-<meta property="og:title" content="qpick.app: Fun, Easy Choices!" />
-<meta property="og:image" content="https://qpick.app/{{image.thumbnail_url}}" />
+<meta property="og:title" content="picked: [{{option_list[0]}}]" />
+<meta
+  property="og:image"
+  content="https://qpick.lim.sh/{{image.thumbnail_url}}"
+/>
 
 <style>
   .important {
@@ -13,7 +16,7 @@
   <div class="card">
     <div class="card-body text-center">
       <img
-        src="https://qpick.app/{{ image.url }}"
+        src="https://qpick.lim.sh/{{ image.url }}"
         class="img-fluid mb-4"
         alt="Responsive image"
       />
