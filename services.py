@@ -34,8 +34,8 @@ def get_image_path(option: str) -> str:
     if os.path.exists(image_path):
         random.seed(None)
         random_number = random.randint(0, 10)
-        if random_number == 0:
-            add_emoji(option, image_path)
+        # if random_number == 0:
+        # add_emoji(option, image_path)
     else:
         generate_image(option, image_path)
 

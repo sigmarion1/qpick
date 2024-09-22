@@ -25,7 +25,7 @@ def generate_image(text, image_path):
     # For example, on many Linux systems, you can use 'DejaVuSans.ttf'
     # font = ImageFont.truetype("DejaVuSans.ttf", font_size)
     # font = ImageFont.load_default(font_size)
-    font = ImageFont.truetype("MaruBuri-Regular.ttf", font_size)
+    font = ImageFont.truetype("font/SpoqaHanSansNeo-Regular.ttf", font_size)
 
     _, _, w, h = draw.textbbox((0, 0), text, font=font)
 
